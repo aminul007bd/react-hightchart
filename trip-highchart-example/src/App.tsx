@@ -11,19 +11,30 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/dayTrip'>DayTrip</Link>
-            </li>
-          </ul>
-        </nav>
+        <ul className='flex'>
+          <li className='mr-6'>
+            <Link className='text-blue-500 hover:text-blue-800' to='/dayTrip'>
+              DayTrip
+            </Link>
+          </li>
+          <li>
+            <Link
+              className='text-blue-500 hover:text-blue-800'
+              to='/hello-world'
+            >
+              Hello World
+            </Link>
+          </li>
+        </ul>
 
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Switch>
           <Route path='/dayTrip'>
             <HighChartAverageTripofDay bikeData={bikeData.bikeTripData} />
+          </Route>
+          <Route path='/hello-world'>
+            <HelloWorld />
           </Route>
         </Switch>
       </div>
